@@ -699,7 +699,11 @@ namespace Unity.Formats.USD
                 .OrderBy(str => str)
                 .Distinct()
                 .ToList();
-            context.skelSortedMap[commonRoot] = allNames;
+            
+            if (commonRoot != null)
+            {
+                context.skelSortedMap[commonRoot] = allNames;
+            }
 
             return commonRoot;
         }
